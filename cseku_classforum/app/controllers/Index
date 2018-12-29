@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Index Controller
+ */
+class Index extends MainController
+{
+
+    public function __construct(){
+        parent::__construct();
+//        Session::checkSession();
+    }
+
+    public function Index(){
+        $this->home();
+    }
+
+    public function home(){
+        $data = ['pageName' => 'Home'];
+        $this->load->view("header", $data);
+        $this->load->view("home");
+        $this->load->view("footer");
+    }
+
+
+}
